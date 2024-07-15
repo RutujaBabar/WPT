@@ -1,0 +1,40 @@
+<!-- example on js error handling  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title></title>   
+  </head>
+  <body>  
+	<h3>demo on error handling</h3>
+	<input type="text" id="tb1" placeholder="first number"> <bR>
+	<input type="text" id="tb2" placeholder="second number"> <br>
+	<button>Divide</button> <br>
+	<output id="res"></output>
+	
+	<script>
+		document.querySelector("button").onclick=()=>{
+		  try
+		  {
+			let x=eval(tb1.value);
+			let y=eval(tb2.value);
+			if(y===0)
+				throw "Division is not possible";
+				
+			let d=x/y;
+			res.value=`Result is ${d}`;
+		  }catch(err){
+			if(err instanceof ReferenceError)	
+			   res.value=`enter only numbers`;
+			else
+			   res.value=err;
+		  }			
+		}		
+	</script>	 
+  </body>
+</html>
+
+
+
+
+      
+
